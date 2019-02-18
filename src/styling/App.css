@@ -1,0 +1,21 @@
+.App {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.btn-3 {
+  background-image: linear-gradient(to right, #b0f4ca 0%, #8fd3f4 51%, #b0f4ca 100%);
+}
+
+.jumb {
+  background-color: white !important;
+}
+
+.scroll {
+  max-width: 70em;
+  height: 40em;
+  padding: 1em;
+  margin: auto;
+  overflow: auto;
+  direction: ltr;
+  text-align: left;
+  }
