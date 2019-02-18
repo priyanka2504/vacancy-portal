@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 
-const path = require('path');
-app.use(express.static(path.join(__dirname, "./src")))
+// const path = require('path');
+// app.use(express.static(path.join(__dirname, "./")))
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -20,7 +20,7 @@ app.use(express.json())
 
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/vacancy");
+mongoose.connect("mongodb://varshant:nitvasu14@ds123151.mlab.com:23151/vacancy");
 
 var nameSchema = new mongoose.Schema({
     name: String,
@@ -168,6 +168,13 @@ app.post('/apply-job', (req, res) => {
             res.status(400).send("unable to save to database");
         })
 });
+
+// if(process.env.NODE_ENV === 'production') {
+//     app.use(express.static('build'));
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+//     } );
+// }
 
 const port = process.env.PORT || 2007;
 app.listen(port, () => console.log(`Listening ${port}`))
